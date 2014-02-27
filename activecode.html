@@ -292,11 +292,34 @@
 <br/>
 <div id="codeexample1_code_div" style="display: block">
 <textarea cols="50" rows="12" id="codeexample1_code" class="active_code", prefixcode="undefined" lang="python">
-print("My first program adds two numbers, 2 and 3:")
-print(2 + 3)
+import turtle
+
+def tree(branchLen,t):
+    if branchLen > 5:
+        t.forward(branchLen)
+        t.right(20)
+        tree(branchLen-15,t)
+        t.left(40)
+        tree(branchLen-15,t)
+        t.right(20)
+        t.backward(branchLen)
+
+def main():
+    t = turtle.Turtle()
+    myWin = turtle.Screen()
+    t.speed(10)
+    t.left(90)
+    t.up()
+    t.backward(100)
+    t.down()
+    t.color("green")
+    tree(75,t)
+    myWin.exitonclick()
+
+main()
 </textarea>
 </div>
-<p class="ac_caption"><span class="ac_caption_text"> (codeexample1)</span> </p>
+<p class="ac_caption"><span class="ac_caption_text">Recursively Drawing a Tree (codeexample1)</span> </p>
 
 <button class='btn btn-success' id="codeexample1_runb" onclick="runit('codeexample1',this, undefined);">Run</button>
 

@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; Learning At Scale</title>
+    <title>Parsons Problems &mdash; Learning At Scale</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -240,7 +240,8 @@
         
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"><ul class="simple">
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Parsons Problems</a></li>
 </ul>
 </ul>
 </li>
@@ -283,30 +284,31 @@
 
 <div class="container">
   
-  <p>And finally here is a way of giving your students some simple programming problems where the code is already there for them but not indented or in the correct order.  Use drag-and-drop to get everthing right.</p>
+  <div class="section" id="parsons-problems">
+<h1>Parsons Problems<a class="headerlink" href="#parsons-problems" title="Permalink to this headline">¶</a></h1>
 <p><strong>Check your understanding</strong></p>
 
         <div class='parsons alert alert-warning'>
         sc-1-5: Construct a block of code that correctly implements the accumulator pattern.<br /><br />
         <div style="clear:left;"></div>
-        <div id="parsons-orig-6" style="display:none;">x = 0
+        <div id="parsons-orig-8" style="display:none;">x = 0
 for i in range(10)
    x = x + 1</div>
-        <div id="parsons-sortableTrash-6" class="sortable-code"></div>
-        <div id="parsons-sortableCode-6" class="sortable-code"></div>
+        <div id="parsons-sortableTrash-8" class="sortable-code"></div>
+        <div id="parsons-sortableCode-8" class="sortable-code"></div>
     	<div style="clear:left;"></div>
-        <input type="button" class='btn btn-success' id="checkMe6" value="Check Me"/>
-        <input type="button" class='btn btn-default' id="reset6" value="Reset"/>
-        <div id="parsons-message-6"></div>
+        <input type="button" class='btn btn-success' id="checkMe8" value="Check Me"/>
+        <input type="button" class='btn btn-default' id="reset8" value="Reset"/>
+        <div id="parsons-message-8"></div>
         </div>
 
     <script>
         $pjQ(document).ready(function(){
-            var msgBox = $("#parsons-message-6");
+            var msgBox = $("#parsons-message-8");
             msgBox.hide();
 	    var displayErrors = function (fb) {
 	        if(fb.errors.length > 0) {
-                    var hash = pp_6.getHash("#ul-parsons-sortableCode-6");
+                    var hash = pp_8.getHash("#ul-parsons-sortableCode-8");
                     msgBox.fadeIn(500);
                     msgBox.attr('class','alert alert-danger');
                     msgBox.html(fb.errors[0]);
@@ -323,8 +325,8 @@ for i in range(10)
 
         $(window).load(function() {
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-6");
-            var trashul = $("#ul-parsons-sortableTrash-6");
+            var sortableul = $("#ul-parsons-sortableCode-8");
+            var trashul = $("#ul-parsons-sortableTrash-8");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -339,35 +341,35 @@ for i in range(10)
         });
  
 
-        var pp_6 = new ParsonsWidget({
-                'sortableId': 'parsons-sortableCode-6',
-		'trashId': 'parsons-sortableTrash-6',
+        var pp_8 = new ParsonsWidget({
+                'sortableId': 'parsons-sortableCode-8',
+		'trashId': 'parsons-sortableTrash-8',
                 'max_wrong_lines': 1,
                 'solution_label': 'Drop blocks here',
                 'feedback_cb' : displayErrors
         });
-        pp_6.init($pjQ("#parsons-orig-6").text());
-	pp_6.shuffleLines();
+        pp_8.init($pjQ("#parsons-orig-8").text());
+	pp_8.shuffleLines();
             
         if(localStorage.getItem('question1_100_4') && localStorage.getItem('question1_100_4-trash')) {
             try {
                 var solution = localStorage.getItem('question1_100_4');
                 var trash = localStorage.getItem('question1_100_4-trash');
-                pp_6.createHTMLFromHashes(solution,trash);
-                pp_6.getFeedback();
+                pp_8.createHTMLFromHashes(solution,trash);
+                pp_8.getFeedback();
             } catch(err) {
                 var text = "An error occured restoring old question1_100_4 state.  Error: ";
                 console.log(text + err.message);
             }
 
         }
-            $pjQ("#reset6").click(function(event){
+            $pjQ("#reset8").click(function(event){
               event.preventDefault();
-              pp_6.shuffleLines();
+              pp_8.shuffleLines();
             
             // set min width and height
-            var sortableul = $("#ul-parsons-sortableCode-6");
-            var trashul = $("#ul-parsons-sortableTrash-6");
+            var sortableul = $("#ul-parsons-sortableCode-8");
+            var trashul = $("#ul-parsons-sortableTrash-8");
             var sortableHeight = sortableul.height();
             var sortableWidth = sortableul.width();
             var trashWidth = trashul.width();
@@ -381,14 +383,14 @@ for i in range(10)
               msgBox.hide();
             });
             
-            $pjQ("#checkMe6").click(function(event){
+            $pjQ("#checkMe8").click(function(event){
               event.preventDefault();
-              var hash = pp_6.getHash("#ul-parsons-sortableCode-6");
+              var hash = pp_8.getHash("#ul-parsons-sortableCode-8");
               localStorage.setItem('question1_100_4',hash);
-              hash = pp_6.getHash("#ul-parsons-sortableTrash-6");
+              hash = pp_8.getHash("#ul-parsons-sortableTrash-8");
               localStorage.setItem('question1_100_4-trash',hash);
             
-            pp_6.getFeedback();
+            pp_8.getFeedback();
             msgBox.fadeIn(100);
             
             });
@@ -398,6 +400,7 @@ for i in range(10)
 
     </script>
 
+</div>
 
 
 </div>
