@@ -241,7 +241,14 @@
           <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
   <ul class="dropdown-menu localtoc"><ul>
-<li><a class="reference internal" href="#">Self-Check Questions</a></li>
+<li><a class="reference internal" href="#">Self-Check Questions</a><ul>
+<li><a class="reference internal" href="#multiple-choice">Multiple Choice</a></li>
+<li><a class="reference internal" href="#multiple-choice-multiple-answer">Multiple Choice Multiple Answer</a></li>
+<li><a class="reference internal" href="#fill-in-the-blank">Fill in the Blank</a></li>
+<li><a class="reference internal" href="#codelens-questions">CodeLens Questions</a></li>
+<li><a class="reference internal" href="#feedback">Feedback</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -286,7 +293,14 @@
   
   <div class="section" id="self-check-questions">
 <h1>Self-Check Questions<a class="headerlink" href="#self-check-questions" title="Permalink to this headline">¶</a></h1>
-<p><strong>Check your understanding</strong></p>
+<div class="section" id="multiple-choice">
+<h2>Multiple Choice<a class="headerlink" href="#multiple-choice" title="Permalink to this headline">¶</a></h2>
+
+    <button type='button' id='rev1_show' class='btn btn-default' style='margin-bottom:10px;' onclick="$(this).hide();$('#rev1').show();$('#rev1_hide').show();$('#rev1').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
+        Show
+    </button>
+    <button type='button' id='rev1_hide' class='btn btn-default' onclick="$(this).hide();$('#rev1').hide();$('#rev1_show').show();" style='display:none'>Hide</button>
+    <div id='rev1' style='display:none'>
 
             <div id="question1_1" class="alert alert-warning">
             Q-1: What programming language does this site help you to learn?<form name="question1_1_form" method="get" action="" onsubmit="return false;">
@@ -312,7 +326,140 @@
             <div id="question1_1_feedback">
             </div>
             </div>
+            
+    </div>
+</div>
+<div class="section" id="multiple-choice-multiple-answer">
+<h2>Multiple Choice Multiple Answer<a class="headerlink" href="#multiple-choice-multiple-answer" title="Permalink to this headline">¶</a></h2>
+
+    <button type='button' id='rev2_show' class='btn btn-default' style='margin-bottom:10px;' onclick="$(this).hide();$('#rev2').show();$('#rev2_hide').show();$('#rev2').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
+        Show
+    </button>
+    <button type='button' id='rev2_hide' class='btn btn-default' onclick="$(this).hide();$('#rev2').hide();$('#rev2_show').show();" style='display:none'>Hide</button>
+    <div id='rev2' style='display:none'>
+
+            <div id="question1_2" class="alert alert-warning">
+            Q-2: Which colors might be found in a rainbow? (choose all that are correct)<form name="question1_2_form" method="get" action="" onsubmit="return false;">
+            <input type="checkbox" name="group1" value="a" id="question1_2_opt_a" />
+            <label for= "question1_2_opt_a">  a) red</label><br />
+            
+            <input type="checkbox" name="group1" value="b" id="question1_2_opt_b" />
+            <label for= "question1_2_opt_b">  b) yellow</label><br />
+            
+            <input type="checkbox" name="group1" value="c" id="question1_2_opt_c" />
+            <label for= "question1_2_opt_c">  c) black</label><br />
+            
+            <input type="checkbox" name="group1" value="d" id="question1_2_opt_d" />
+            <label for= "question1_2_opt_d">  d) green</label><br />
+            
+            <script>
+            $(document).ready(function(){checkMultipleSelect('question1_2');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkMCMAStorage('question1_2','a,b,d',['Red is a definitely on of the colors.', 'Yes, yellow is correct.', 'Remember the acronym...ROY G BIV.  B stands for blue.', 'Yes, green is one of the colors.'])">Check Me</button>
+            <button class='btn btn-default' id="question1_2_bcomp" disabled name="compare" onclick="compareAnswers('question1_2');">Compare Me</button>
+            </form><br />
+            <div id="question1_2_feedback">
             </div>
+            </div>
+            
+    </div>
+</div>
+<div class="section" id="fill-in-the-blank">
+<h2>Fill in the Blank<a class="headerlink" href="#fill-in-the-blank" title="Permalink to this headline">¶</a></h2>
+
+    <button type='button' id='rev3_show' class='btn btn-default' style='margin-bottom:10px;' onclick="$(this).hide();$('#rev3').show();$('#rev3_hide').show();$('#rev3').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
+        Show
+    </button>
+    <button type='button' id='rev3_hide' class='btn btn-default' onclick="$(this).hide();$('#rev3').hide();$('#rev3_show').show();" style='display:none'>Hide</button>
+    <div id='rev3' style='display:none'>
+
+            <div id="baseconvert1" class="alert alert-warning">
+            Q-3: What is value of 25 expressed as an octal number (base 8) <input type='text' id='baseconvert1_ans1' class="form-control" style="display:inline; width: 60px;" value=""></input>
+            <script>
+            $(document).ready(function(){checkPreviousFIB('baseconvert1');});
+            </script>
+            <button class='btn btn-success' name="do answer" onclick="checkFIBStorage('baseconvert1', 'baseconvert1_ans1', '\\b31\\b',[], false)">Check Me</button>
+            <button class='btn btn-default' id="baseconvert1_bcomp" disabled name="compare" onclick="compareFITBAnswers('baseconvert1');">Compare Me</button>
+            <br />
+            <br />
+            <div id="baseconvert1_feedback">
+            </div>
+            </div>
+            
+    </div>
+</div>
+<div class="section" id="codelens-questions">
+<h2>CodeLens Questions<a class="headerlink" href="#codelens-questions" title="Permalink to this headline">¶</a></h2>
+
+    <button type='button' id='rev3_show' class='btn btn-default' style='margin-bottom:10px;' onclick="$(this).hide();$('#rev3').show();$('#rev3_hide').show();$('#rev3').find('.CodeMirror').each(function(i, el){el.CodeMirror.refresh();});">
+        Show
+    </button>
+    <button type='button' id='rev3_hide' class='btn btn-default' onclick="$(this).hide();$('#rev3').hide();$('#rev3_show').show();" style='display:none'>Hide</button>
+    <div id='rev3' style='display:none'>
+
+<div id="codelens_question"></div>
+<p class="cl_caption"><span class="cl_caption_text"> (codelens_question)</span> </p>
+<div id="codelens_question_modal" class="modal fade codelens-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Check your understanding</h4>
+      </div>
+      <div class="modal-body">
+        <p>What is the value of tot after the line with the red arrow executes?</p>
+        <input id="codelens_question_textbox" type="textbox" class="form-control" style="width:200px;" />
+        <br />
+        <button id="codelens_question_tracecheck" class='btn btn-default tracecheck' onclick="traceQCheckMe('codelens_question_textbox','codelens_question','globals.tot')">
+          Check Me
+        </button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Continue</button>
+        <br />
+        <p id="codelens_question_feedbacktext" class="feedbacktext alert alert-warning"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var codelens_question_trace = {"code": "tot = 0\nprod = 1\nfor i in range(10):\n   tot = tot + i\n   prod = prod * i", "trace": [{"ordered_globals": [], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {}, "heap": {}, "line": 1, "event": "step_line"}, {"ordered_globals": ["tot"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"tot": 0}, "heap": {}, "line": 2, "event": "step_line"}, {"ordered_globals": ["tot", "prod"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"prod": 1, "tot": 0}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 0, "prod": 1, "tot": 0}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 0, "prod": 1, "tot": 0}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 0, "prod": 0, "tot": 0}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 1, "prod": 0, "tot": 0}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 1, "prod": 0, "tot": 1}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 1, "prod": 0, "tot": 1}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 2, "prod": 0, "tot": 1}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 2, "prod": 0, "tot": 3}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 2, "prod": 0, "tot": 3}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 3, "prod": 0, "tot": 3}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 3, "prod": 0, "tot": 6}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 3, "prod": 0, "tot": 6}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 4, "prod": 0, "tot": 6}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 4, "prod": 0, "tot": 10}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 4, "prod": 0, "tot": 10}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 5, "prod": 0, "tot": 10}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 5, "prod": 0, "tot": 15}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 5, "prod": 0, "tot": 15}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 6, "prod": 0, "tot": 15}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 6, "prod": 0, "tot": 21}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 6, "prod": 0, "tot": 21}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 7, "prod": 0, "tot": 21}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 7, "prod": 0, "tot": 28}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 7, "prod": 0, "tot": 28}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 8, "prod": 0, "tot": 28}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 8, "prod": 0, "tot": 36}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 8, "prod": 0, "tot": 36}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "question": {"text": "What is the value of tot after the line with the red arrow executes?", "div": "codelens_question_modal", "feedback": "Use the global variables box to look at the current values of tot and i.", "correct": "globals.tot"}, "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 9, "prod": 0, "tot": 36}, "heap": {}, "line": 4, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 9, "prod": 0, "tot": 45}, "heap": {}, "line": 5, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 9, "prod": 0, "tot": 45}, "heap": {}, "line": 3, "event": "step_line"}, {"ordered_globals": ["tot", "prod", "i"], "stdout": "", "func_name": "<module>", "stack_to_render": [], "globals": {"i": 9, "prod": 0, "tot": 45}, "heap": {}, "line": 3, "event": "return"}]};
+var codelens_question_vis;
+
+$(document).ready(function() {
+    codelens_question_vis = new ExecutionVisualizer('codelens_question',codelens_question_trace,
+                                {embeddedMode: true,
+                                verticalStack: true,
+                                heightChangeCallback: redrawAllVisualizerArrows,
+                                codeDivWidth: 500
+                                });
+    attachLoggers(codelens_question_vis,'codelens_question');
+    allVisualizers.push(codelens_question_vis);
+
+});
+
+$(document).ready(function() {
+    $("#codelens_question_tracecheck").click(function() {
+        logBookEvent({'event':'codelens', 'act': 'check', 'div_id':'codelens_question'});
+    });
+});
+
+if (allVisualizers === undefined) {
+   var allVisualizers = [];
+}
+
+
+$(window).resize(function() {
+    codelens_question_vis.redrawConnectors();
+});
+</script>
+
+    </div>
+</div>
+<div class="section" id="feedback">
+<h2>Feedback<a class="headerlink" href="#feedback" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
 
 
 </div>
